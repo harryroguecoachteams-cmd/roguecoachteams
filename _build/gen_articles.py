@@ -228,6 +228,8 @@ def clean(body, slug):
     out = re.sub(r"(?is)<h1[^>]*>.*?</h1>", "", out)
     out = re.sub(r"(?is)<p>\s*</p>", "", out)
     out = re.sub(r"(?is)<aside>\s*</aside>", "", out)
+    # a wide table scrolls inside its own box; it must never scroll the page
+    out = re.sub(r"(?is)(<table>.*?</table>)", r'<div class="scrollx">\1</div>', out)
     out = re.sub(r">\s{2,}<", ">\n<", out)
     out = re.sub(r"\n{3,}", "\n\n", out)
     return out.strip(), c.cover

@@ -281,7 +281,7 @@ strong { font-weight: 650; color: var(--paper); }
   color: var(--paper);
   text-decoration: none;
   font-weight: 600;
-  padding-bottom: 3px;
+  padding: 4px 0 3px;          /* reaches the 24px WCAG 2.2 target size */
   background-image: linear-gradient(var(--gold), var(--gold));
   background-repeat: no-repeat;
   background-position: 0 100%;
@@ -1050,7 +1050,12 @@ strong { font-weight: 650; color: var(--paper); }
 .prose h3 { font-size: 1.22rem; color: var(--paper); margin-top: 1.7em; }
 .prose h4 { font-size: 1.02rem; color: var(--gold); margin-top: 1.5em; }
 .prose strong { color: var(--paper); }
-.prose a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.prose a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding-block: 3px;          /* reaches the 24px WCAG 2.2 target size */
+}
 .prose ul,
 .prose ol { padding-left: 1.25em; margin-top: 0.9em; }
 .prose li { margin-bottom: 0.5em; }
@@ -1087,7 +1092,15 @@ strong { font-weight: 650; color: var(--paper); }
   background: var(--panel);
 }
 .prose summary { cursor: pointer; font-weight: 650; color: var(--paper); }
-.prose table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+/* Wide content scrolls inside its own box; the page never scrolls sideways. */
+.scrollx {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-block: 1.6em;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+}
+.prose table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: 0.95rem; }
 .prose th,
 .prose td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); }
 .prose th { color: var(--paper); font-weight: 650; }
