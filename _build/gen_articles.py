@@ -230,6 +230,10 @@ def clean(body, slug):
     out = re.sub(r"(?is)<aside>\s*</aside>", "", out)
     # a wide table scrolls inside its own box; it must never scroll the page
     out = re.sub(r"(?is)(<table>.*?</table>)", r'<div class="scrollx">\1</div>', out)
+    # the posts link to the old WP booking page, which is on the parked domain.
+    # Every booking CTA on this site goes straight to Calendly instead.
+    out = out.replace("https://roguecoachteams.com/rebel-strategy-call/", CAL)
+    out = out.replace("https://roguecoachteams.com/rebel-strategy-call", CAL)
     out = re.sub(r">\s{2,}<", ">\n<", out)
     out = re.sub(r"\n{3,}", "\n\n", out)
     return out.strip(), c.cover
