@@ -5,3 +5,4 @@ _maria_frames.jpg
 maria_transcript.json
 Thumbs.db
 .DS_Store
+__pycache__/

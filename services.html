@@ -1,31 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- @head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Services — Rogue Coach Teams</title>
-<meta name="description" content="Two ways to work with us: a 90-day sprint that runs the whole playbook, or a single fixed-price service when you already know the lever you're missing.">
+<title>Services | Rogue Coach Teams</title>
+<meta name="description" content="Two ways to grow: a 90-day done-with-you sprint across content, funnel and warm JV outreach, or one fixed-price service when you already know the lever you&#x27;re missing.">
 <link rel="canonical" href="https://roguecoachteams.com/services.html">
-<meta property="og:title" content="Services — Rogue Coach Teams">
-<meta property="og:description" content="A 90-day done-with-you sprint, or one fixed-price service. Pick what fits where you are.">
+<meta property="og:title" content="Services | Rogue Coach Teams">
+<meta property="og:description" content="Two ways to grow: a 90-day done-with-you sprint across content, funnel and warm JV outreach, or one fixed-price service when you already know the lever you&#x27;re missing.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://roguecoachteams.com/services.html">
+<meta property="og:image" content="https://roguecoachteams.com/assets/img/v2/fan-center.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0F1A">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <script>
+/* Reveal animations only apply when JS is alive. If site.js never runs,
+   the flag is pulled back off and the page renders as plain markup. */
 (function(d){d.className+=' js';setTimeout(function(){
   if(!document.body||!document.body.classList.contains('is-ready'))
     d.className=d.className.replace(' js','');},2500);})(document.documentElement);
 </script>
+<!-- /@head -->
 </head>
 <body>
+<!-- @header -->
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="hdr">
-  <div class="wrap hdr__in">
-    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="34" height="34">Rogue Coach Teams</a>
+<div class="topbar">
+  <header class="navbar">
+    <a class="brand" href="index.html" aria-label="Rogue Coach Teams, home"><img src="assets/img/v2/mark.png" alt="" width="40" height="20"><span>Rogue Coach Teams</span></a>
     <nav class="nav" aria-label="Primary">
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
@@ -33,10 +42,10 @@
       <a href="insights.html">Insights</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a class="btn btn--sm" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call</a>
+    <a class="btn btn--sm" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span></span></button>
-  </div>
-</header>
+  </header>
+</div>
 
 <nav class="drawer" id="drawer" aria-label="Mobile">
   <a href="services.html">Services</a>
@@ -44,87 +53,90 @@
   <a href="about.html">About</a>
   <a href="insights.html">Insights</a>
   <a href="contact.html">Contact</a>
-  <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call</a>
+  <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
 </nav>
+<!-- /@header -->
 
 <main id="main">
 
-  <section class="band band--tight">
+  <section class="sec dark glow gridbg phero" aria-labelledby="svc-h">
     <div class="wrap">
-      <p class="label lift" style="--d:60ms">Services</p>
-      <h1 class="lift" style="--d:140ms;max-width:15ch">Choose your growth path.</h1>
-      <p class="lede lift" style="--d:240ms;margin-top:24px">
-        Get visible, book more calls, and scale without burning money on ads. There are two
-        ways to start, and the honest answer to which one is usually obvious within fifteen
-        minutes of talking.
+      <p class="eyebrow lift" style="--d:40ms"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Services</p>
+      <h1 id="svc-h" class="lift" style="--d:120ms">Choose your<br><span class="grad">growth path.</span></h1>
+      <p class="lede lift" style="--d:240ms">
+        Get visible, book more calls, and scale without burning money on ads. There are two ways
+        to start, and which one fits is usually obvious within fifteen minutes of talking.
       </p>
+      <div class="cta-row lift" style="--d:340ms">
+        <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        <a class="btn btn--ghost" href="#paths">See both paths <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-down"/></svg></a>
+      </div>
     </div>
   </section>
 
-  <section class="band band--tight">
+  <section class="sec light" id="paths" aria-labelledby="paths-h">
     <div class="wrap">
-      <div class="grid grid--2 rise">
-
-        <article class="card" style="padding:34px">
-          <p class="label label--plain">Ready to move fast?</p>
-          <h2 style="font-size:clamp(1.6rem,2.6vw,2.1rem);margin-bottom:14px">The 90-day sprint</h2>
+      <div class="head rise">
+        <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Two ways to start</p>
+        <h2 id="paths-h">Move fast,<br><span class="grad">or focus on one thing.</span></h2>
+      </div>
+      <div class="paths">
+        <article class="card path dark rise">
+          <div class="path__top"><p class="kicker" style="margin:0">Ready to move fast?</p><span class="badge">From $900</span></div>
+          <h3>The 90-day sprint</h3>
           <p>Build momentum in 90 days with a tight, done-with-you engine: authority content,
-            conversion-ready funnels and warm JV outreach. Weekly iteration, clear metrics,
-            and assets you keep.</p>
-          <ul class="ticks" style="margin-top:22px">
+            conversion-ready funnels and warm JV outreach. Weekly iteration, clear metrics, and
+            assets you keep.</p>
+          <ul class="ticks">
             <li>Consistent, on-brand content that positions you as the expert</li>
             <li>A clean funnel that turns attention into booked calls</li>
             <li>Warm-intro JV opportunities that expand your audience</li>
           </ul>
-          <p style="margin-top:26px">
-            <a class="btn" href="sprint.html">Explore the sprint — from $900 <span class="arw" aria-hidden="true">↗</span></a>
-          </p>
+          <a class="btn" href="sprint.html">Explore the sprint <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
         </article>
-
-        <article class="card" style="padding:34px">
-          <p class="label label--plain">Want to focus on one thing?</p>
-          <h2 style="font-size:clamp(1.6rem,2.6vw,2.1rem);margin-bottom:14px">Individual services</h2>
-          <p>Pick the single lever you need most right now — brand clarity, website, funnel,
+        <article class="card path rise" style="--d:100ms">
+          <div class="path__top"><p class="kicker" style="margin:0">Want to focus on one thing?</p><span class="badge">From $99</span></div>
+          <h3>Individual services</h3>
+          <p>Pick the single lever you need most right now: brand clarity, website, funnel,
             content, podcast, PR or JV outreach. We scope it tightly and ship it.</p>
-          <ul class="ticks" style="margin-top:22px">
+          <ul class="ticks">
             <li>Niche and offer clarity, plus a brand kit</li>
             <li>A coaching website or funnel built to convert</li>
             <li>An authority content engine, or a podcast set up properly</li>
-            <li>JV lead generation — warm intros, not cold lists</li>
+            <li>JV lead generation: warm intros, not cold lists</li>
           </ul>
-          <p style="margin-top:26px">
-            <a class="btn btn--ghost" href="pricing.html">Browse 12 services — from $99 <span class="arw" aria-hidden="true">↗</span></a>
-          </p>
+          <a class="btn btn--ghost" href="pricing.html">Browse 12 services <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
         </article>
-
       </div>
     </div>
   </section>
 
-  <section class="band band--alt band--edge">
+  <section class="sec dark glow glow--side" aria-labelledby="crew-h">
     <div class="wrap">
-      <div class="split split--5-7 split--top">
+      <div class="head--split">
         <div class="rise">
-          <p class="label">Why this crew</p>
-          <h2>We left the big-agency treadmill on purpose.</h2>
+          <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Why this crew</p>
+          <h2 id="crew-h">We left the agency treadmill<br><span class="grad">on purpose.</span></h2>
         </div>
-        <p class="lede rise" style="--d:80ms">
-          A small team that shipped for over a hundred coaching brands, now helping coaches
-          grow the sane way: content that converts, clean funnels, and warm-intro partnerships.
-          No account manager relaying messages to someone you never meet.
-        </p>
+        <div class="note rise" style="--d:100ms">
+          <p>No account manager relaying messages.</p>
+          <p>A small team that shipped for over a hundred coaching brands, now helping coaches grow
+            the sane way: content that converts, clean funnels, and warm-intro partnerships.</p>
+        </div>
       </div>
-
-      <div class="grid rise" style="margin-top:44px">
-        <div class="card">
+      <div class="grid">
+        <div class="card card--hover rise">
+          <span class="ico" style="margin-bottom:24px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#users"/></svg></span>
           <h3>Lean and senior</h3>
-          <p>Operators over overhead. No fluff — just people who've shipped this before, repeatedly.</p>
+          <p>Operators over overhead. People who've shipped this before, repeatedly.</p>
         </div>
-        <div class="card">
+        <div class="card card--hover rise" style="--d:80ms">
+          <span class="ico" style="margin-bottom:24px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#award"/></svg></span>
           <h3>Authority first</h3>
           <p>Look credible, sound credible, and get invited into the rooms where people buy.</p>
         </div>
-        <div class="card">
+        <div class="card card--hover rise" style="--d:160ms">
+          <span class="ico" style="margin-bottom:24px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#key"/></svg></span>
           <h3>You own your assets</h3>
           <p>Your content, funnels, copy and automations are yours forever. Nothing is held hostage.</p>
         </div>
@@ -132,82 +144,120 @@
     </div>
   </section>
 
-  <section class="band">
-    <div class="wrap">
-      <div class="stack" style="max-width:50ch;margin-bottom:48px">
-        <p class="label">How the work runs</p>
-        <h2>Five steps, in this order, whichever path you pick.</h2>
-      </div>
-      <div class="engine">
-        <div class="step">
-          <div class="step__pin">01</div><h3>Clarity &amp; positioning</h3>
-          <p>Sharpen the niche, offer and proof so leads arrive already half-sold.</p>
-        </div>
-        <div class="step">
-          <div class="step__pin">02</div><h3>Authority foundation</h3>
-          <p>A fast, premium site plus a lead magnet and email engine that works.</p>
-        </div>
-        <div class="step">
-          <div class="step__pin">03</div><h3>Content that builds trust</h3>
-          <p>Site copy, nurture emails and social that actually sound like you.</p>
-        </div>
-        <div class="step">
-          <div class="step__pin">04</div><h3>Partnership pipeline</h3>
-          <p>Warm outreach and JV stages that put you in front of buyers.</p>
-        </div>
-        <div class="step">
-          <div class="step__pin">05</div><h3>Iterate &amp; scale</h3>
-          <p>Simple dashboards, weekly priorities, steady compounding improvement.</p>
+  <section class="sec light light--2" aria-labelledby="runs-h">
+    <div class="wrap why">
+      <div class="why__copy rise">
+        <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>How the work runs</p>
+        <h2 id="runs-h" style="margin-bottom:30px">Five steps,<br><span class="grad">whichever path you pick.</span></h2>
+        <p>The sprint runs all five on a weekly cadence. A single service picks up at the step you're
+          stuck on.</p>
+        <p class="strong">Either way, the order doesn't change.</p>
+        <p>Positioning comes before promotion, and the foundation comes before the traffic, because
+          traffic to a page that doesn't convert just makes the leak bigger.</p>
+        <div class="cta-row" style="margin-top:32px">
+          <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Find your step <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
         </div>
       </div>
+
+      <aside class="method rise" style="--d:120ms" aria-labelledby="engine-h">
+        <h3 class="method__h" id="engine-h">The Rogue engine</h3>
+        <p class="method__sub">Five steps, in this order, whichever path you pick.</p>
+        <ol class="msteps">
+          <li class="mstep">
+            <span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#compass"/></svg></span>
+            <div class="mstep__box">
+              <div class="mstep__t"><b>Clarity &amp; positioning</b><span class="mstep__n">01</span></div>
+              <p>Sharpen the niche, offer and proof so leads arrive already half-sold.</p>
+            </div>
+          </li>
+          <li class="mstep">
+            <span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#layout"/></svg></span>
+            <div class="mstep__box">
+              <div class="mstep__t"><b>Authority foundation</b><span class="mstep__n">02</span></div>
+              <p>A fast, premium site plus a lead magnet and email engine that works.</p>
+            </div>
+          </li>
+          <li class="mstep">
+            <span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#pen"/></svg></span>
+            <div class="mstep__box">
+              <div class="mstep__t"><b>Content that builds trust</b><span class="mstep__n">03</span></div>
+              <p>Site copy, nurture emails and social that actually sound like you.</p>
+            </div>
+          </li>
+          <li class="mstep">
+            <span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#link"/></svg></span>
+            <div class="mstep__box">
+              <div class="mstep__t"><b>Partnership pipeline</b><span class="mstep__n">04</span></div>
+              <p>Warm outreach and JV stages that put you in front of buyers.</p>
+            </div>
+          </li>
+          <li class="mstep">
+            <span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#trend"/></svg></span>
+            <div class="mstep__box">
+              <div class="mstep__t"><b>Iterate &amp; scale</b><span class="mstep__n">05</span></div>
+              <p>Simple dashboards, weekly priorities, steady compounding improvement.</p>
+            </div>
+          </li>
+        </ol>
+      </aside>
     </div>
   </section>
 
-  <section class="band band--alt band--edge">
-    <div class="wrap wrap--narrow">
-      <h2 style="margin-bottom:36px">Common questions</h2>
-      <div class="faq">
+  <section class="sec light" aria-labelledby="faq-h">
+    <div class="wrap faqs">
+      <div class="faqs__side rise">
+        <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>FAQ</p>
+        <h2 id="faq-h">Common<br><span class="grad">questions.</span></h2>
+        <p class="lede">Switching paths, websites, social media, and what to do when you're not sure yet.</p>
+        <div class="advice">
+          <b>Still deciding?</b>
+          <p>No pressure. Just a conversation.</p>
+          <a class="arrowlink" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="acc rise" style="--d:100ms">
         <details>
           <summary>Can I switch from an individual service to the sprint later?</summary>
-          <div class="faq__a">Yes. We'll credit the relevant work so you don't pay for the same thing twice.</div>
+          <div class="acc__a">Yes. We'll credit the relevant work so you don't pay for the same thing twice.</div>
         </details>
         <details>
           <summary>Do I need a website to start?</summary>
-          <div class="faq__a">No. If you're early, we'll ship a minimal funnel and book calls first. The website can follow.</div>
+          <div class="acc__a">No. If you're early, we'll ship a minimal funnel and book calls first. The website can follow.</div>
         </details>
         <details>
           <summary>Will I need to be on social media every day?</summary>
-          <div class="faq__a">No. We set a cadence you can sustain, with repurposing to multiply the reach of each piece.</div>
+          <div class="acc__a">No. We set a cadence you can sustain, with repurposing to multiply the reach of each piece.</div>
         </details>
         <details>
           <summary>What if I'm not sure what I need first?</summary>
-          <div class="faq__a">Then that's the thing to solve first, and it's free. We'll ask a few questions, audit what you already have, and recommend a clear next step with options by budget and timeline.</div>
+          <div class="acc__a">Then that's the thing to solve first, and it's free. We'll ask a few questions, audit what you already have, and recommend a clear next step with options by budget and timeline.</div>
         </details>
       </div>
     </div>
   </section>
 
-  <section class="band band--tight">
-    <div class="wrap">
-      <div class="finale rise">
-        <h2>Not sure what you need first?</h2>
-        <p class="lede">That's a normal place to start, and it's the fastest thing to fix. Fifteen minutes, a look at what you've got, and a clear recommendation — no pressure attached to it.</p>
-        <div class="hero__cta">
-          <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Get a custom plan call <span class="arw" aria-hidden="true">↗</span></a>
-          <a class="btn btn--ghost" href="contact.html">Send us your goals</a>
-        </div>
+  <section class="sec dark glow glow--low cta" aria-labelledby="cta-h">
+    <div class="wrap rise">
+      <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Ready when you are</p>
+      <h2 id="cta-h">Not sure what<br><span class="grad">you need first?</span></h2>
+      <p class="lede">That's a normal place to start, and it's the fastest thing to fix. Fifteen minutes, a look at what you've got, and a clear recommendation with no pressure attached to it.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:34px">
+        <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Get a custom plan call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        <a class="btn btn--ghost" href="contact.html">Send us your goals</a>
       </div>
     </div>
   </section>
 
 </main>
 
+<!-- @footer -->
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr__grid">
       <div>
-        <a class="brand" href="index.html" style="margin-bottom:16px"><img src="assets/img/logo.png" alt="" width="34" height="34">Rogue Coach Teams</a>
-        <p style="max-width:38ch">The lean growth team for coaches. Authority, partnerships and simple systems — built with you, and handed over to you.</p>
+        <a class="brand" href="index.html" aria-label="Rogue Coach Teams, home"><img src="assets/img/v2/mark.png" alt="" width="40" height="20"><span>Rogue Coach Teams</span></a>
+        <p class="ftr__tag">Authority first.<br><span>Built to book calls.</span></p>
+        <p class="ftr__small">The lean growth team for coaches. Built with you, and handed over to you.</p>
       </div>
       <div>
         <h4>Work with us</h4>
@@ -227,14 +277,22 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+      <div class="ftr__contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:roguecoachteams@gmail.com"><span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail"/></svg></span>roguecoachteams@gmail.com</a></li>
+          <li><a href="https://calendly.com/roguecoachteams/rebel-strategy-call"><span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#calendar"/></svg></span>Book a 15-min call</a></li>
+        </ul>
+      </div>
     </div>
     <div class="ftr__base">
-      <span>© 2026 Rogue Coach Teams. Built with intention, not with fluff.</span>
-      <a href="mailto:roguecoachteams@gmail.com">roguecoachteams@gmail.com</a>
+      <span>&copy; 2026 Rogue Coach Teams. Built with intention, not with fluff.</span>
+      <span>Lean growth team for coaches</span>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/site.js"></script>
+<!-- /@footer -->
 </body>
 </html>

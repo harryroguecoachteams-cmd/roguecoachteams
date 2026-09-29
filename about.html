@@ -1,31 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- @head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About — Rogue Coach Teams</title>
-<meta name="description" content="A layoff, a phone call, and a decision to build the agency we wished existed: small by design, senior by default, and paid to get coaches to booked calls.">
+<title>About | Rogue Coach Teams</title>
+<meta name="description" content="A small senior crew that shipped sites, launches and growth systems for over a hundred coaching brands, then went independent to build the agency coaches actually need.">
 <link rel="canonical" href="https://roguecoachteams.com/about.html">
-<meta property="og:title" content="About — Rogue Coach Teams">
-<meta property="og:description" content="Small by design, senior by default. The crew behind 100+ coaching brands, and why we started.">
+<meta property="og:title" content="About | Rogue Coach Teams">
+<meta property="og:description" content="A small senior crew that shipped sites, launches and growth systems for over a hundred coaching brands, then went independent to build the agency coaches actually need.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://roguecoachteams.com/about.html">
+<meta property="og:image" content="https://roguecoachteams.com/assets/img/crew.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0F1A">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <script>
+/* Reveal animations only apply when JS is alive. If site.js never runs,
+   the flag is pulled back off and the page renders as plain markup. */
 (function(d){d.className+=' js';setTimeout(function(){
   if(!document.body||!document.body.classList.contains('is-ready'))
     d.className=d.className.replace(' js','');},2500);})(document.documentElement);
 </script>
+<!-- /@head -->
 </head>
 <body>
+<!-- @header -->
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="hdr">
-  <div class="wrap hdr__in">
-    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="34" height="34">Rogue Coach Teams</a>
+<div class="topbar">
+  <header class="navbar">
+    <a class="brand" href="index.html" aria-label="Rogue Coach Teams, home"><img src="assets/img/v2/mark.png" alt="" width="40" height="20"><span>Rogue Coach Teams</span></a>
     <nav class="nav" aria-label="Primary">
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
@@ -33,10 +42,10 @@
       <a href="insights.html">Insights</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a class="btn btn--sm" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call</a>
+    <a class="btn btn--sm" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span></span></button>
-  </div>
-</header>
+  </header>
+</div>
 
 <nav class="drawer" id="drawer" aria-label="Mobile">
   <a href="services.html">Services</a>
@@ -44,205 +53,231 @@
   <a href="about.html">About</a>
   <a href="insights.html">Insights</a>
   <a href="contact.html">Contact</a>
-  <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call</a>
+  <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
 </nav>
+<!-- /@header -->
 
 <main id="main">
 
-  <section class="band band--tight">
+  <section class="sec dark glow gridbg phero" aria-labelledby="about-h">
     <div class="wrap">
-      <p class="label lift" style="--d:60ms">About us</p>
-      <h1 class="lift" style="--d:140ms;max-width:16ch">From a layoff to a crew coaches can trust.</h1>
-      <p class="lede lift" style="--d:240ms;margin-top:24px">
+      <p class="eyebrow lift" style="--d:40ms"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>About us</p>
+      <h1 id="about-h" class="lift" style="--d:120ms">From a layoff<br><span class="grad">to a crew coaches trust.</span></h1>
+      <p class="lede lift" style="--d:240ms">
         Before Rogue, we were the people inside somebody else's company quietly shipping the
-        work — sites, launches and growth systems for over a hundred coaches. Then, overnight,
+        work: sites, launches and growth systems for over a hundred coaches. Then, overnight,
         that was gone.
       </p>
+      <div class="cta-row lift" style="--d:340ms">
+        <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        <a class="btn btn--ghost" href="#team">Meet the team <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-down"/></svg></a>
+      </div>
     </div>
   </section>
 
   <!-- The story is a real sequence, so it earns its numbering. -->
-  <section class="band band--tight">
+  <section class="sec light" aria-labelledby="story-h">
     <div class="wrap">
-      <div class="engine">
-        <div class="step">
-          <div class="step__pin">01</div>
-          <h3>The fall</h3>
-          <p>The layoff. A hundred coaching brands' worth of experience, and nowhere to put it on a Monday morning.</p>
+      <div class="head rise">
+        <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>The story</p>
+        <h2 id="story-h">Five moments<br><span class="grad">that built Rogue.</span></h2>
+      </div>
+      <ol class="track rise">
+        <li class="tstep">
+          <span class="tstep__n">01</span>
+          <div><h3>The fall</h3>
+          <p>The layoff. A hundred coaching brands' worth of experience, and nowhere to put it on a Monday morning.</p></div>
+        </li>
+        <li class="tstep">
+          <span class="tstep__n">02</span>
+          <div><h3>Crossroads</h3>
+          <p>Take a safe role and build someone else's thing again, or build the agency we'd wished existed.</p></div>
+        </li>
+        <li class="tstep">
+          <span class="tstep__n">03</span>
+          <div><h3>The call</h3>
+          <p>AJ called Stacey and Harry. It was short. Build it differently: trust first, lean, hands on.</p></div>
+        </li>
+        <li class="tstep">
+          <span class="tstep__n">04</span>
+          <div><h3>Rebellion</h3>
+          <p>Precision over scale, reliability over noise. Not a factory. A small force a coach can actually rely on.</p></div>
+        </li>
+        <li class="tstep">
+          <span class="tstep__n">05</span>
+          <div><h3>Now</h3>
+          <p>A hundred-plus launches later, still small on purpose. One story, one launch, one partnership at a time.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec dark glow glow--side" aria-labelledby="us-h">
+    <div class="wrap spot">
+      <div class="rise">
+        <div class="photo">
+          <img src="assets/img/crew.jpg" alt="The Rogue Coach Teams crew at their first meetup, in costume and mid-laugh" width="1024" height="1024" loading="lazy">
+          <div class="vid__bar">
+            <div><small>First meetup</small><b>A few months after the layoff</b></div>
+            <span class="live">The crew</span>
+          </div>
         </div>
-        <div class="step">
-          <div class="step__pin">02</div>
-          <h3>Crossroads</h3>
-          <p>Take a safe role and build someone else's thing again — or build the agency we'd wished existed.</p>
-        </div>
-        <div class="step">
-          <div class="step__pin">03</div>
-          <h3>The call</h3>
-          <p>AJ called Stacey and Harry. It was short. Build it differently: trust first, lean, hands on.</p>
-        </div>
-        <div class="step">
-          <div class="step__pin">04</div>
-          <h3>Rebellion</h3>
-          <p>Precision over scale, reliability over noise. Not a factory — a small force a coach can actually rely on.</p>
-        </div>
-        <div class="step">
-          <div class="step__pin">05</div>
-          <h3>Now</h3>
-          <p>A hundred-plus launches later, still small on purpose. One story, one launch, one partnership at a time.</p>
-        </div>
+      </div>
+      <div class="rise" style="--d:120ms">
+        <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>This is us</p>
+        <h2 id="us-h">The first meetup<br><span class="grad">after we launched.</span></h2>
+        <p class="lede" style="margin-top:24px">
+          Part reunion, part plotting session. Big smiles, some honest venting, a couple of new
+          rebels, and a plan to ship what coaches actually need. It's the crew behind the
+          results, with no account layer and no handoff to someone junior.
+        </p>
+        <blockquote>
+          &ldquo;Hard days and layoffs can happen. <em>Smile anyway. Keep shipping.</em>&rdquo;
+          <footer>AJ, founder</footer>
+        </blockquote>
       </div>
     </div>
   </section>
 
-  <section class="band band--alt band--edge">
+  <section class="sec light" aria-labelledby="principles-h">
     <div class="wrap">
-      <div class="split split--5-7 split--top">
+      <div class="head--split">
         <div class="rise">
-          <p class="label">This is us</p>
-          <h2>The first meetup after we launched.</h2>
+          <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>How we're different</p>
+          <h2 id="principles-h">Eight principles.<br><span class="grad">What we build, and what we refuse.</span></h2>
         </div>
-        <p class="lede rise" style="--d:80ms">
-          A few months after the layoff that started all of this: part reunion, part plotting
-          session. Big smiles, some honest venting, a couple of new rebels, and a plan to ship
-          what coaches actually need. It's the crew behind the results — no account layer, no
-          handoff to someone junior.
+        <div class="note rise" style="--d:100ms">
+          <p>Small on purpose.</p>
+          <p>Every one of these came out of watching what went wrong at the big agencies we used to work inside.</p>
+        </div>
+      </div>
+      <div class="grid grid--4">
+        <div class="card card--hover rise"><span class="ico" style="margin-bottom:22px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#users"/></svg></span><h3>Small by design, senior by default</h3><p>No layers. You work with the people who do the work.</p></div>
+        <div class="card card--hover rise" style="--d:60ms"><span class="ico" style="margin-bottom:22px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#award"/></svg></span><h3>Authority over noise</h3><p>Positioning, proof and partnerships that make selling easier.</p></div>
+        <div class="card card--hover rise" style="--d:120ms"><span class="ico" style="margin-bottom:22px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#layers"/></svg></span><h3>Systems you'll actually use</h3><p>Simple, resilient funnels and ops. No fragile gadgets.</p></div>
+        <div class="card card--hover rise" style="--d:180ms"><span class="ico" style="margin-bottom:22px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#link"/></svg></span><h3>Partner-first growth</h3><p>Warm intros, JV stages and collaborations that compound.</p></div>
+        <div class="card card--hover rise"><span class="ico" style="margin-bottom:22px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#trend"/></svg></span><h3>Measured creativity</h3><p>Clear taste plus data. We ship, track and iterate quickly.</p></div>
+        <div class="card card--hover rise" style="--d:60ms"><span class="ico" style="margin-bottom:22px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#zap"/></svg></span><h3>Agency, not homework</h3><p>We build it with you and for you, not hand you a task list.</p></div>
+        <div class="card card--hover rise" style="--d:120ms"><span class="ico" style="margin-bottom:22px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#package"/></svg></span><h3>Lean and practical</h3><p>Every dollar goes into work that moves you forward.</p></div>
+        <div class="card card--hover rise" style="--d:180ms"><span class="ico" style="margin-bottom:22px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#target"/></svg></span><h3>Outcomes you can see</h3><p>Booked calls, partner intros and assets you keep.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark glow" aria-labelledby="mission-h">
+    <div class="wrap split split--top">
+      <div class="rise">
+        <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Our mission</p>
+        <h2 id="mission-h">Give coaches<br><span class="grad">an unfair advantage.</span></h2>
+        <p class="lede" style="margin-top:24px">
+          Authority, partnerships and simple systems, so that starting, stabilizing and scaling
+          feels clear and achievable instead of loud and confusing.
         </p>
       </div>
-      <figure class="rise" style="margin:44px 0 0">
-        <img src="assets/img/crew.jpg" alt="The Rogue Coach Teams crew at their first meetup, in costume and mid-laugh" loading="lazy" width="1024" height="1024" style="width:100%;max-width:760px;border-radius:var(--r-lg);border:1px solid var(--line)">
-        <figcaption class="tiny" style="margin-top:14px">“Hard days and layoffs can happen. Smile anyway. Keep shipping.” — AJ</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <div class="stack" style="max-width:46ch;margin-bottom:48px">
-        <p class="label">How we're different</p>
-        <h2>Eight principles that decide what we build and what we refuse.</h2>
-      </div>
-      <div class="grid rise">
-        <div class="card"><h3>Small by design, senior by default</h3><p>No layers. You work with the people who do the work.</p></div>
-        <div class="card"><h3>Authority over noise</h3><p>Positioning, proof and partnerships that make selling easier.</p></div>
-        <div class="card"><h3>Systems you'll actually use</h3><p>Simple, resilient funnels and ops. No fragile gadgets.</p></div>
-        <div class="card"><h3>Partner-first growth</h3><p>Warm intros, JV stages and collaborations that compound.</p></div>
-        <div class="card"><h3>Measured creativity</h3><p>Clear taste plus data. We ship, track, and iterate quickly.</p></div>
-        <div class="card"><h3>Agency, not homework</h3><p>We build it with you and for you, not hand you a task list.</p></div>
-        <div class="card"><h3>Lean and practical</h3><p>Every dollar goes into work that moves you forward.</p></div>
-        <div class="card"><h3>Outcomes you can see</h3><p>Booked calls, partner intros and assets you keep.</p></div>
+      <div class="card rise" style="--d:100ms">
+        <p class="kicker" style="margin-bottom:20px">What we do</p>
+        <ul class="ticks">
+          <li><strong>Authority website.</strong> Fast, accessible and on-brand.</li>
+          <li><strong>Lead magnet and email engine.</strong> A quiz or ebook, plus the automations behind it.</li>
+          <li><strong>Editorial system.</strong> Site and social content you're happy to publish.</li>
+          <li><strong>JV and partner outreach.</strong> Podcast bookings, webinars, warm intros.</li>
+          <li><strong>Campaigns and analytics.</strong> Plan, launch, measure, refine.</li>
+          <li><strong>Ops and automation.</strong> A clean stack where everything talks to everything.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="band band--alt band--edge">
+  <section class="sec light" id="team" aria-labelledby="team-h">
     <div class="wrap">
-      <div class="split split--7-5 split--top">
-        <div class="rise">
-          <p class="label">Our mission</p>
-          <h2 style="margin-bottom:20px">Give coaches an unfair advantage.</h2>
-          <p class="lede">
-            Authority, partnerships and simple systems — so that starting, stabilizing and
-            scaling feels clear and achievable instead of loud and confusing.
-          </p>
-        </div>
-        <div class="rise" style="--d:80ms">
-          <p class="label label--mute">What we do</p>
-          <ul class="ticks" style="margin-top:4px">
-            <li><strong>Authority website</strong> — fast, accessible and on-brand</li>
-            <li><strong>Lead magnet and email engine</strong> — quiz or ebook, plus the automations behind it</li>
-            <li><strong>Editorial system</strong> — site and social content you're happy to publish</li>
-            <li><strong>JV and partner outreach</strong> — podcast bookings, webinars, warm intros</li>
-            <li><strong>Campaigns and analytics</strong> — plan, launch, measure, refine</li>
-            <li><strong>Ops and automation</strong> — a clean stack where everything talks to everything</li>
-          </ul>
-        </div>
+      <div class="head rise">
+        <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Meet the team</p>
+        <h2 id="team-h">Seven people.<br><span class="grad">You'll know them all by name.</span></h2>
       </div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <div class="stack" style="max-width:44ch;margin-bottom:44px">
-        <p class="label">Meet the team</p>
-        <h2>Seven people. You'll know all of them by name.</h2>
-      </div>
-      <div class="crew rise">
-        <div class="person">
+      <div class="team">
+        <article class="card person rise">
           <img src="assets/img/team-aj.jpg" alt="AJ" loading="lazy" width="560" height="436">
-          <h4>AJ</h4><span>Founder &amp; initiator</span>
-          <p>The spark behind Rogue. Rallied the crew to build a lean, trustworthy growth engine for coaches.</p>
-        </div>
-        <div class="person">
+          <div class="person__b"><h3>AJ</h3><p class="kicker">Founder &amp; initiator</p>
+          <p>The spark behind Rogue. Rallied the crew to build a lean, trustworthy growth engine for coaches.</p></div>
+        </article>
+        <article class="card person rise" style="--d:60ms">
           <img src="assets/img/team-stacey.jpg" alt="Stacey" loading="lazy" width="560" height="560">
-          <h4>Stacey</h4><span>Co-founder</span>
-          <p>Operator with heart. Turns strategy into week-by-week plans that actually ship.</p>
-        </div>
-        <div class="person">
+          <div class="person__b"><h3>Stacey</h3><p class="kicker">Co-founder</p>
+          <p>Operator with heart. Turns strategy into week-by-week plans that actually ship.</p></div>
+        </article>
+        <article class="card person rise" style="--d:120ms">
           <img src="assets/img/team-harry.jpg" alt="Harry" loading="lazy" width="560" height="560">
-          <h4>Harry</h4><span>Systems &amp; ops</span>
-          <p>Connective tissue for your stack — sites, funnels, email, analytics. Leads flow, data stays clean.</p>
-        </div>
-        <div class="person">
+          <div class="person__b"><h3>Harry</h3><p class="kicker">Systems &amp; ops</p>
+          <p>Connective tissue for your stack: sites, funnels, email, analytics. Leads flow, data stays clean.</p></div>
+        </article>
+        <article class="card person rise" style="--d:180ms">
           <img src="assets/img/team-emma.jpg" alt="Emma" loading="lazy" width="560" height="560">
-          <h4>Emma</h4><span>Content specialist</span>
-          <p>Voice of authority. Research-driven copy and content coaches are proud to publish.</p>
-        </div>
-        <div class="person">
+          <div class="person__b"><h3>Emma</h3><p class="kicker">Content specialist</p>
+          <p>Voice of authority. Research-driven copy and content coaches are proud to publish.</p></div>
+        </article>
+        <article class="card person rise">
           <img src="assets/img/team-liam.jpg" alt="Liam" loading="lazy" width="560" height="373">
-          <h4>Liam</h4><span>Developer</span>
-          <p>Turns wireframes into fast, stable, on-brand builds. WordPress, Elementor, clean CSS and JS.</p>
-        </div>
-        <div class="person">
+          <div class="person__b"><h3>Liam</h3><p class="kicker">Developer</p>
+          <p>Turns wireframes into fast, stable, on-brand builds. WordPress, Elementor, clean CSS and JS.</p></div>
+        </article>
+        <article class="card person rise" style="--d:60ms">
           <img src="assets/img/team-ethan.jpg" alt="Ethan" loading="lazy" width="560" height="373">
-          <h4>Ethan</h4><span>Marketing specialist</span>
-          <p>Demand in motion — channel strategy, list growth, and campaigns that compound.</p>
-        </div>
-        <div class="person">
+          <div class="person__b"><h3>Ethan</h3><p class="kicker">Marketing specialist</p>
+          <p>Demand in motion: channel strategy, list growth, and campaigns that compound.</p></div>
+        </article>
+        <article class="card person rise" style="--d:120ms">
           <img src="assets/img/team-angie.jpg" alt="Angie" loading="lazy" width="560" height="436">
-          <h4>Angie</h4><span>Outreach specialist</span>
-          <p>Door opener. Finds the right partners and hosts, writes the outreach, turns replies into booked calls.</p>
-        </div>
+          <div class="person__b"><h3>Angie</h3><p class="kicker">Outreach specialist</p>
+          <p>Door opener. Finds the right partners and hosts, writes the outreach, turns replies into booked calls.</p></div>
+        </article>
+        <article class="card lane lane--q dark rise" style="--d:180ms">
+          <span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#calendar"/></svg></span>
+          <h3>Talk to the people who'd do the work</h3>
+          <p>Fifteen minutes, no account manager in between.</p>
+          <div class="lane__foot"><a class="arrowlink" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="band band--alt band--edge">
-    <div class="wrap wrap--narrow">
-      <p class="label">Our promise</p>
-      <p class="pull" style="font-size:clamp(1.4rem,2.6vw,2rem);font-weight:600">
+  <section class="sec light light--2" aria-labelledby="promise-h">
+    <div class="wrap wrap--narrow rise">
+      <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg><span id="promise-h">Our promise</span></p>
+      <p class="promise">
         If you're new or struggling, you don't need another loud guru. You need a small senior
         team that stands next to you, makes the plan simple, builds the assets properly, and
-        opens doors that lead to real conversations.
+        <span class="grad">opens doors that lead to real conversations.</span>
       </p>
       <p class="lede" style="margin-top:28px">
-        That's Rogue: honest in our advice, careful with your time and money, and stubborn
-        about getting you to booked calls. We'll sweat the details, tell you what matters and
-        what doesn't, and keep showing up until the system works — as a teammate, not a vendor.
+        That's Rogue: honest in our advice, careful with your time and money, and stubborn about
+        getting you to booked calls. We'll sweat the details, tell you what matters and what
+        doesn't, and keep showing up until the system works, as a teammate and not a vendor.
       </p>
     </div>
   </section>
 
-  <section class="band band--tight">
-    <div class="wrap">
-      <div class="finale rise">
-        <h2>Come and use the crew.</h2>
-        <p class="lede">Fifteen minutes with the people who'd actually do the work. Bring the messy version — that's the useful one.</p>
-        <div class="hero__cta">
-          <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <span class="arw" aria-hidden="true">↗</span></a>
-          <a class="btn btn--ghost" href="index.html#work">See the work</a>
-        </div>
+  <section class="sec dark glow glow--low cta" aria-labelledby="cta-h">
+    <div class="wrap rise">
+      <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Ready when you are</p>
+      <h2 id="cta-h">Come and use<br><span class="grad">the crew.</span></h2>
+      <p class="lede">Fifteen minutes with the people who'd actually do the work. Bring the messy version. That's the useful one.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:34px">
+        <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        <a class="btn btn--ghost" href="index.html#work">See the work</a>
       </div>
     </div>
   </section>
 
 </main>
 
+<!-- @footer -->
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr__grid">
       <div>
-        <a class="brand" href="index.html" style="margin-bottom:16px"><img src="assets/img/logo.png" alt="" width="34" height="34">Rogue Coach Teams</a>
-        <p style="max-width:38ch">The lean growth team for coaches. Authority, partnerships and simple systems — built with you, and handed over to you.</p>
+        <a class="brand" href="index.html" aria-label="Rogue Coach Teams, home"><img src="assets/img/v2/mark.png" alt="" width="40" height="20"><span>Rogue Coach Teams</span></a>
+        <p class="ftr__tag">Authority first.<br><span>Built to book calls.</span></p>
+        <p class="ftr__small">The lean growth team for coaches. Built with you, and handed over to you.</p>
       </div>
       <div>
         <h4>Work with us</h4>
@@ -262,14 +297,22 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+      <div class="ftr__contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:roguecoachteams@gmail.com"><span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail"/></svg></span>roguecoachteams@gmail.com</a></li>
+          <li><a href="https://calendly.com/roguecoachteams/rebel-strategy-call"><span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#calendar"/></svg></span>Book a 15-min call</a></li>
+        </ul>
+      </div>
     </div>
     <div class="ftr__base">
-      <span>© 2026 Rogue Coach Teams. Built with intention, not with fluff.</span>
-      <a href="mailto:roguecoachteams@gmail.com">roguecoachteams@gmail.com</a>
+      <span>&copy; 2026 Rogue Coach Teams. Built with intention, not with fluff.</span>
+      <span>Lean growth team for coaches</span>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/site.js"></script>
+<!-- /@footer -->
 </body>
 </html>

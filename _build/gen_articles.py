@@ -14,6 +14,7 @@ import os
 import re
 import urllib.request
 import ssl
+import sys
 from html.parser import HTMLParser
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -24,12 +25,6 @@ HOST = "roguecoachteams.com"
 CTX = ssl._create_unverified_context()
 
 CAL = "https://calendly.com/roguecoachteams/rebel-strategy-call"
-
-NAV = """      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-      <a href="insights.html">Insights</a>
-      <a href="contact.html">Contact</a>"""
 
 META = {
     "coaching-scams": dict(
@@ -71,7 +66,7 @@ def fetch(url, dest):
 
 def localize_images(body, slug):
     """Copy every remote image next to the site so no page depends on a host we
-    do not control — the WP uploads (served from the origin IP, since the domain
+    do not control: the WP uploads (served from the origin IP, since the domain
     is parked) and the Unsplash covers the posts hotlink."""
     os.makedirs(IMGDIR, exist_ok=True)
 
@@ -112,7 +107,7 @@ class Cleaner(HTMLParser):
 
     The posts are hand-built templates inside an Elementor HTML widget, so the
     class names are predictable:
-      section.rc-hero   duplicates the title, subtitle and cover — the page
+      section.rc-hero   duplicates the title, subtitle and cover; the page
                         template supplies those, so the whole subtree is cut
                         (the cover image is lifted out first).
       div.rc-callout    a highlighted note  -> <aside>
@@ -215,6 +210,16 @@ class Cleaner(HTMLParser):
         pass
 
 
+def strip_dashes(text):
+    """No em or en dashes anywhere on the site. Ranges read "to", a figure label
+    takes a colon, and any other dash becomes a comma."""
+    dash = "[\u2013\u2014]"
+    text = re.sub(r"(?<=[0-9Kk])\s*" + dash + r"\s*(?=[$0-9])", " to ", text)
+    text = re.sub(r"(Figure [0-9.]+)\s*" + dash + r"\s*", r"\1: ", text)
+    text = re.sub(r"\s*" + dash + r"\s*", ", ", text)
+    return text
+
+
 def clean(body, slug):
     body = re.sub(r"(?is)<(style|script|noscript)[^>]*>.*?</\1>", "", body)
     body = localize_images(body, slug)
@@ -234,96 +239,18 @@ def clean(body, slug):
     # Every booking CTA on this site goes straight to Calendly instead.
     out = out.replace("https://roguecoachteams.com/rebel-strategy-call/", CAL)
     out = out.replace("https://roguecoachteams.com/rebel-strategy-call", CAL)
+    out = strip_dashes(out)
     out = re.sub(r">\s{2,}<", ">\n<", out)
     out = re.sub(r"\n{3,}", "\n\n", out)
     return out.strip(), c.cover
 
 
-def head(title, desc, canon):
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title}</title>
-<meta name="description" content="{desc}">
-<link rel="canonical" href="https://roguecoachteams.com/{canon}">
-<meta property="og:title" content="{title}">
-<meta property="og:description" content="{desc}">
-<meta property="og:type" content="article">
-<link rel="icon" href="assets/img/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
-<script>
-(function(d){{d.className+=' js';setTimeout(function(){{
-  if(!document.body||!document.body.classList.contains('is-ready'))
-    d.className=d.className.replace(' js','');}},2500);}})(document.documentElement);
-</script>
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
+sys.path.insert(0, HERE)
+from chrome import icon, page  # noqa: E402
 
-<header class="hdr">
-  <div class="wrap hdr__in">
-    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="34" height="34">Rogue Coach Teams</a>
-    <nav class="nav" aria-label="Primary">
-{NAV}
-    </nav>
-    <a class="btn btn--sm" href="{CAL}">Book a 15-min call</a>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span></span></button>
-  </div>
-</header>
+SPARK = icon("spark")
+ARROW = icon("arrow")
 
-<nav class="drawer" id="drawer" aria-label="Mobile">
-{NAV}
-  <a class="btn" href="{CAL}">Book a 15-min call</a>
-</nav>
-
-<main id="main">
-"""
-
-
-FOOT = f"""</main>
-
-<footer class="ftr">
-  <div class="wrap">
-    <div class="ftr__grid">
-      <div>
-        <a class="brand" href="index.html" style="margin-bottom:16px"><img src="assets/img/logo.png" alt="" width="34" height="34">Rogue Coach Teams</a>
-        <p style="max-width:38ch">The lean growth team for coaches. Authority, partnerships and simple systems — built with you, and handed over to you.</p>
-      </div>
-      <div>
-        <h4>Work with us</h4>
-        <ul>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="sprint.html">90-day sprint</a></li>
-          <li><a href="pricing.html">Individual services</a></li>
-          <li><a href="{CAL}">Book a call</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="index.html#work">Work</a></li>
-          <li><a href="insights.html">Insights</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ftr__base">
-      <span>© 2026 Rogue Coach Teams. Built with intention, not with fluff.</span>
-      <a href="mailto:roguecoachteams@gmail.com">roguecoachteams@gmail.com</a>
-    </div>
-  </div>
-</footer>
-
-<script src="assets/js/site.js"></script>
-</body>
-</html>
-"""
 
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December"]
@@ -336,6 +263,7 @@ def pretty(date):
 
 posts = json.load(open(os.path.join(HERE, "posts.json"), encoding="utf8"))
 index = []
+CAL = "https://calendly.com/roguecoachteams/rebel-strategy-call"
 
 for p in posts:
     meta = META.get(p["slug"])
@@ -348,25 +276,22 @@ for p in posts:
     date = p["date"][:10]
 
     lead = ""
-    if cover and cover[0]:
+    cover_src = cover[0] if cover and cover[0] else ""
+    if cover_src:
         lead = (
-            '      <img src="{}" alt="{}" loading="lazy" '
-            'style="width:100%;border-radius:var(--r);border:1px solid var(--line);'
-            'margin-bottom:40px">\n'
-        ).format(cover[0], html.escape(cover[1] or "", quote=True))
+            '      <img class="cover rise" src="{}" alt="{}" width="1600" height="900">\n'
+        ).format(cover_src, html.escape(cover[1] or "", quote=True))
 
-    page = head(f"{title} — Rogue Coach Teams", meta["desc"], meta["slug"] + ".html") + f"""
-  <section class="band band--tight">
-    <div class="wrap wrap--narrow">
-      <p class="label lift" style="--d:60ms">{meta['kicker']}</p>
-      <h1 class="lift" style="--d:140ms">{title}</h1>
-      <p class="tiny lift" style="--d:240ms;margin-top:20px">
-        <time datetime="{date}">{pretty(date)}</time> · Rogue Coach Teams
-      </p>
+    body_html = f"""
+  <section class="sec dark glow gridbg phero" aria-labelledby="post-h">
+    <div class="wrap">
+      <p class="eyebrow lift" style="--d:40ms">{SPARK}{meta['kicker']}</p>
+      <h1 id="post-h" class="lift" style="--d:120ms;max-width:20ch;font-size:clamp(2.2rem,1.2rem + 3.4vw,3.9rem)">{title}</h1>
+      <p class="phero__meta lift" style="--d:240ms"><time datetime="{date}">{pretty(date)}</time> · Rogue Coach Teams</p>
     </div>
   </section>
 
-  <section class="band band--tight">
+  <section class="sec light">
     <div class="wrap wrap--narrow">
 {lead}      <div class="prose">
 {body}
@@ -374,69 +299,78 @@ for p in posts:
     </div>
   </section>
 
-  <section class="band band--tight">
-    <div class="wrap wrap--narrow">
-      <div class="finale">
-        <h2>Want this handled rather than read about?</h2>
-        <p class="lede">Fifteen minutes on your niche, your offer and the fastest honest path to 10–15 calls a month.</p>
-        <div class="hero__cta">
-          <a class="btn" href="{CAL}">Book a 15-min call <span class="arw" aria-hidden="true">↗</span></a>
-          <a class="btn btn--ghost" href="insights.html">Read the others</a>
-        </div>
+  <section class="sec dark glow glow--low cta" aria-labelledby="cta-h">
+    <div class="wrap rise">
+      <p class="eyebrow">{SPARK}Ready when you are</p>
+      <h2 id="cta-h">Want this handled<br><span class="grad">rather than read about?</span></h2>
+      <p class="lede">Fifteen minutes on your niche, your offer and the fastest honest path to 10 to 15 calls a month.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:34px">
+        <a class="btn" href="{CAL}">Book a 15-min call {ARROW}</a>
+        <a class="btn btn--ghost" href="insights.html">Read the others</a>
       </div>
     </div>
   </section>
-""" + FOOT
-
-    io.open(os.path.join(SITE, meta["slug"] + ".html"), "w", encoding="utf8").write(page)
+"""
+    image = cover_src if cover_src.startswith("assets/") else "assets/img/v2/fan-center.webp"
+    out = page(f"{title} | Rogue Coach Teams", meta["desc"], meta["slug"] + ".html",
+               body_html, image)
+    io.open(os.path.join(SITE, meta["slug"] + ".html"), "w", encoding="utf8", newline="\n").write(out)
     excerpt = re.sub(r"<[^>]+>", " ", p["excerpt"]["rendered"])
-    excerpt = html.unescape(re.sub(r"\s+", " ", excerpt)).strip()
-    index.append((date, meta, excerpt))
+    excerpt = strip_dashes(html.unescape(re.sub(r"\s+", " ", excerpt)).strip())
+    index.append((date, meta, excerpt, cover_src))
 
 # ---------------------------------------------------------------- index page
-index.sort(reverse=True)
-cards = "\n".join(f"""        <a class="post" href="{m['slug']}.html">
-          <time datetime="{d}">{m['kicker']} · {pretty(d)}</time>
-          <h3>{m['title']}</h3>
-          <p>{ex[:190].rsplit(' ', 1)[0]}…</p>
-        </a>""" for d, m, ex in index)
+index.sort(key=lambda t: t[0], reverse=True)
+cards = []
+for n, (d, m, ex, cov) in enumerate(index):
+    img = (f'<img src="{cov}" alt="" loading="lazy" width="1600" height="1000">' if cov else "")
+    delay = f' style="--d:{n * 80}ms"' if n else ""
+    cards.append(f"""        <a class="card post rise" href="{m['slug']}.html"{delay}>
+          {img}
+          <div class="post__b">
+            <time datetime="{d}">{m['kicker']} · {pretty(d)}</time>
+            <h3>{m['title']}</h3>
+            <p>{html.escape(m['desc'], quote=False)}</p>
+            <span class="arrowlink">Read the article {ARROW}</span>
+          </div>
+        </a>""")
 
-page = head("Insights — Rogue Coach Teams",
-            "Field notes on authority, joint ventures and the parts of the coaching "
-            "industry nobody puts in the sales page.",
-            "insights.html") + f"""
-  <section class="band band--tight">
+body_html = f"""
+  <section class="sec dark glow gridbg phero" aria-labelledby="ins-h">
     <div class="wrap">
-      <p class="label lift" style="--d:60ms">Insights</p>
-      <h1 class="lift" style="--d:140ms;max-width:16ch">What we've learned, written down.</h1>
-      <p class="lede lift" style="--d:240ms;margin-top:24px">
+      <p class="eyebrow lift" style="--d:40ms">{SPARK}Insights</p>
+      <h1 id="ins-h" class="lift" style="--d:120ms">What we've learned,<br><span class="grad">written down.</span></h1>
+      <p class="lede lift" style="--d:240ms">
         Field notes on authority, partnerships, and the parts of the coaching industry that
         don't make it into anyone's sales page. Written by the people doing the work.
       </p>
     </div>
   </section>
 
-  <section class="band band--tight">
+  <section class="sec light" aria-label="Articles">
     <div class="wrap">
-      <div class="grid rise">
-{cards}
+      <div class="grid">
+{chr(10).join(cards)}
       </div>
     </div>
   </section>
 
-  <section class="band band--tight">
-    <div class="wrap">
-      <div class="finale rise">
-        <h2>Prefer the short version, out loud?</h2>
-        <p class="lede">Book fifteen minutes and we'll apply all of this to your specific situation instead.</p>
-        <div class="hero__cta">
-          <a class="btn" href="{CAL}">Book a 15-min call <span class="arw" aria-hidden="true">↗</span></a>
-          <a class="btn btn--ghost" href="services.html">See the services</a>
-        </div>
+  <section class="sec dark glow glow--low cta" aria-labelledby="cta-h">
+    <div class="wrap rise">
+      <p class="eyebrow">{SPARK}Ready when you are</p>
+      <h2 id="cta-h">Prefer the short version,<br><span class="grad">out loud?</span></h2>
+      <p class="lede">Book fifteen minutes and we'll apply all of this to your specific situation instead.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:34px">
+        <a class="btn" href="{CAL}">Book a 15-min call {ARROW}</a>
+        <a class="btn btn--ghost" href="services.html">See the services</a>
       </div>
     </div>
   </section>
-""" + FOOT
+"""
 
-io.open(os.path.join(SITE, "insights.html"), "w", encoding="utf8").write(page)
-print(f"wrote insights.html — {len(index)} articles")
+out = page("Insights | Rogue Coach Teams",
+           "Field notes on authority building, joint ventures and the coaching-agency playbook, "
+           "written by the people doing the work.",
+           "insights.html", body_html)
+io.open(os.path.join(SITE, "insights.html"), "w", encoding="utf8", newline="\n").write(out)
+print(f"wrote insights.html, {len(index)} articles")

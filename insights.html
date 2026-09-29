@@ -1,31 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- @head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insights — Rogue Coach Teams</title>
-<meta name="description" content="Field notes on authority, joint ventures and the parts of the coaching industry nobody puts in the sales page.">
+<title>Insights | Rogue Coach Teams</title>
+<meta name="description" content="Field notes on authority building, joint ventures and the coaching-agency playbook, written by the people doing the work.">
 <link rel="canonical" href="https://roguecoachteams.com/insights.html">
-<meta property="og:title" content="Insights — Rogue Coach Teams">
-<meta property="og:description" content="Field notes on authority, joint ventures and the parts of the coaching industry nobody puts in the sales page.">
-<meta property="og:type" content="article">
+<meta property="og:title" content="Insights | Rogue Coach Teams">
+<meta property="og:description" content="Field notes on authority building, joint ventures and the coaching-agency playbook, written by the people doing the work.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://roguecoachteams.com/insights.html">
+<meta property="og:image" content="https://roguecoachteams.com/assets/img/v2/fan-center.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0F1A">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <script>
+/* Reveal animations only apply when JS is alive. If site.js never runs,
+   the flag is pulled back off and the page renders as plain markup. */
 (function(d){d.className+=' js';setTimeout(function(){
   if(!document.body||!document.body.classList.contains('is-ready'))
     d.className=d.className.replace(' js','');},2500);})(document.documentElement);
 </script>
+<!-- /@head -->
 </head>
 <body>
+<!-- @header -->
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="hdr">
-  <div class="wrap hdr__in">
-    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="34" height="34">Rogue Coach Teams</a>
+<div class="topbar">
+  <header class="navbar">
+    <a class="brand" href="index.html" aria-label="Rogue Coach Teams, home"><img src="assets/img/v2/mark.png" alt="" width="40" height="20"><span>Rogue Coach Teams</span></a>
     <nav class="nav" aria-label="Primary">
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
@@ -33,75 +42,90 @@
       <a href="insights.html">Insights</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a class="btn btn--sm" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call</a>
+    <a class="btn btn--sm" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span></span></button>
-  </div>
-</header>
+  </header>
+</div>
 
 <nav class="drawer" id="drawer" aria-label="Mobile">
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-      <a href="insights.html">Insights</a>
-      <a href="contact.html">Contact</a>
-  <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="about.html">About</a>
+  <a href="insights.html">Insights</a>
+  <a href="contact.html">Contact</a>
+  <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
 </nav>
+<!-- /@header -->
 
 <main id="main">
 
-  <section class="band band--tight">
+  <section class="sec dark glow gridbg phero" aria-labelledby="ins-h">
     <div class="wrap">
-      <p class="label lift" style="--d:60ms">Insights</p>
-      <h1 class="lift" style="--d:140ms;max-width:16ch">What we've learned, written down.</h1>
-      <p class="lede lift" style="--d:240ms;margin-top:24px">
+      <p class="eyebrow lift" style="--d:40ms"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Insights</p>
+      <h1 id="ins-h" class="lift" style="--d:120ms">What we've learned,<br><span class="grad">written down.</span></h1>
+      <p class="lede lift" style="--d:240ms">
         Field notes on authority, partnerships, and the parts of the coaching industry that
         don't make it into anyone's sales page. Written by the people doing the work.
       </p>
     </div>
   </section>
 
-  <section class="band band--tight">
+  <section class="sec light" aria-label="Articles">
     <div class="wrap">
-      <div class="grid rise">
-        <a class="post" href="coaching-scams.html">
-          <time datetime="2025-12-12">Scam watch · 12 December 2025</time>
-          <h3>The $43,000 lie: how high-ticket coaching agencies burn coaches</h3>
-          <p>Scam Watch · Coaching Industry The $43,000 Lie: How High-Ticket Coaching Agencies Are Destroying Coaches’ Dreams And What You Can Do About It An insider exposé on the scripts, contracts,…</p>
+      <div class="grid">
+        <a class="card post rise" href="coaching-scams.html">
+          <img src="assets/img/blog/coaching-scams-cover.jpg" alt="" loading="lazy" width="1600" height="1000">
+          <div class="post__b">
+            <time datetime="2025-12-12">Scam watch · 12 December 2025</time>
+            <h3>The $43,000 lie: how high-ticket coaching agencies burn coaches</h3>
+            <p>An inside look at the high-ticket coaching agency playbook, what it actually costs coaches, and how to tell a real partner from a pitch.</p>
+            <span class="arrowlink">Read the article <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></span>
+          </div>
         </a>
-        <a class="post" href="authority-building-for-coaches.html">
-          <time datetime="2025-09-16">Authority · 16 September 2025</time>
-          <h3>Authority building for coaches: from another coach to the coach</h3>
-          <p>Authority · Coaching Growth Authority Building for Coaches: How to Go From “Another Coach” to The Coach Everyone Wants to Work With Practical strategies to turn expertise into trust,…</p>
+        <a class="card post rise" href="authority-building-for-coaches.html" style="--d:80ms">
+          <img src="assets/img/blog/authority-building-for-coaches-cover.jpg" alt="" loading="lazy" width="1600" height="1000">
+          <div class="post__b">
+            <time datetime="2025-09-16">Authority · 16 September 2025</time>
+            <h3>Authority building for coaches: from another coach to the coach</h3>
+            <p>Practical strategies to build genuine authority as a coach, so the right clients arrive already convinced instead of needing to be sold.</p>
+            <span class="arrowlink">Read the article <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></span>
+          </div>
         </a>
-        <a class="post" href="joint-ventures-for-coaches.html">
-          <time datetime="2025-09-10">Joint ventures · 10 September 2025</time>
-          <h3>Joint ventures for coaches: how partnerships grow you faster</h3>
-          <p>Joint Ventures · Coaching Growth Unlocking Potential: The Power of Joint Ventures for Coaches Joint ventures help coaches amplify reach, share resources, and co-create offers that move the…</p>
+        <a class="card post rise" href="joint-ventures-for-coaches.html" style="--d:160ms">
+          <img src="assets/img/blog/joint-ventures-for-coaches-cover.jpg" alt="" loading="lazy" width="1600" height="1000">
+          <div class="post__b">
+            <time datetime="2025-09-10">Joint ventures · 10 September 2025</time>
+            <h3>Joint ventures for coaches: how partnerships grow you faster</h3>
+            <p>How joint ventures let coaches amplify reach, share resources and win warm introductions without spending a cent on ads.</p>
+            <span class="arrowlink">Read the article <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></span>
+          </div>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="band band--tight">
-    <div class="wrap">
-      <div class="finale rise">
-        <h2>Prefer the short version, out loud?</h2>
-        <p class="lede">Book fifteen minutes and we'll apply all of this to your specific situation instead.</p>
-        <div class="hero__cta">
-          <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <span class="arw" aria-hidden="true">↗</span></a>
-          <a class="btn btn--ghost" href="services.html">See the services</a>
-        </div>
+  <section class="sec dark glow glow--low cta" aria-labelledby="cta-h">
+    <div class="wrap rise">
+      <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Ready when you are</p>
+      <h2 id="cta-h">Prefer the short version,<br><span class="grad">out loud?</span></h2>
+      <p class="lede">Book fifteen minutes and we'll apply all of this to your specific situation instead.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:34px">
+        <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        <a class="btn btn--ghost" href="services.html">See the services</a>
       </div>
     </div>
   </section>
+
 </main>
 
+<!-- @footer -->
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr__grid">
       <div>
-        <a class="brand" href="index.html" style="margin-bottom:16px"><img src="assets/img/logo.png" alt="" width="34" height="34">Rogue Coach Teams</a>
-        <p style="max-width:38ch">The lean growth team for coaches. Authority, partnerships and simple systems — built with you, and handed over to you.</p>
+        <a class="brand" href="index.html" aria-label="Rogue Coach Teams, home"><img src="assets/img/v2/mark.png" alt="" width="40" height="20"><span>Rogue Coach Teams</span></a>
+        <p class="ftr__tag">Authority first.<br><span>Built to book calls.</span></p>
+        <p class="ftr__small">The lean growth team for coaches. Built with you, and handed over to you.</p>
       </div>
       <div>
         <h4>Work with us</h4>
@@ -121,14 +145,22 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+      <div class="ftr__contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:roguecoachteams@gmail.com"><span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail"/></svg></span>roguecoachteams@gmail.com</a></li>
+          <li><a href="https://calendly.com/roguecoachteams/rebel-strategy-call"><span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#calendar"/></svg></span>Book a 15-min call</a></li>
+        </ul>
+      </div>
     </div>
     <div class="ftr__base">
-      <span>© 2026 Rogue Coach Teams. Built with intention, not with fluff.</span>
-      <a href="mailto:roguecoachteams@gmail.com">roguecoachteams@gmail.com</a>
+      <span>&copy; 2026 Rogue Coach Teams. Built with intention, not with fluff.</span>
+      <span>Lean growth team for coaches</span>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/site.js"></script>
+<!-- /@footer -->
 </body>
 </html>

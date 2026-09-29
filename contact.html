@@ -1,31 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- @head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — Rogue Coach Teams</title>
-<meta name="description" content="Book a 15-minute strategy call, or send a message and hear back within 24–48 hours. No hard pitch either way.">
+<title>Contact | Rogue Coach Teams</title>
+<meta name="description" content="Tell us where you&#x27;re stuck. Send a message and we&#x27;ll reply within 24 to 48 hours, or book a 15-minute call with the people who&#x27;d actually do the work.">
 <link rel="canonical" href="https://roguecoachteams.com/contact.html">
-<meta property="og:title" content="Contact — Rogue Coach Teams">
-<meta property="og:description" content="Book 15 minutes or send a message. We reply within 24–48 hours.">
+<meta property="og:title" content="Contact | Rogue Coach Teams">
+<meta property="og:description" content="Tell us where you&#x27;re stuck. Send a message and we&#x27;ll reply within 24 to 48 hours, or book a 15-minute call with the people who&#x27;d actually do the work.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://roguecoachteams.com/contact.html">
+<meta property="og:image" content="https://roguecoachteams.com/assets/img/v2/fan-center.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0F1A">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <script>
+/* Reveal animations only apply when JS is alive. If site.js never runs,
+   the flag is pulled back off and the page renders as plain markup. */
 (function(d){d.className+=' js';setTimeout(function(){
   if(!document.body||!document.body.classList.contains('is-ready'))
     d.className=d.className.replace(' js','');},2500);})(document.documentElement);
 </script>
+<!-- /@head -->
 </head>
 <body>
+<!-- @header -->
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="hdr">
-  <div class="wrap hdr__in">
-    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="34" height="34">Rogue Coach Teams</a>
+<div class="topbar">
+  <header class="navbar">
+    <a class="brand" href="index.html" aria-label="Rogue Coach Teams, home"><img src="assets/img/v2/mark.png" alt="" width="40" height="20"><span>Rogue Coach Teams</span></a>
     <nav class="nav" aria-label="Primary">
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
@@ -33,10 +42,10 @@
       <a href="insights.html">Insights</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a class="btn btn--sm" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call</a>
+    <a class="btn btn--sm" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span></span></button>
-  </div>
-</header>
+  </header>
+</div>
 
 <nav class="drawer" id="drawer" aria-label="Mobile">
   <a href="services.html">Services</a>
@@ -44,105 +53,100 @@
   <a href="about.html">About</a>
   <a href="insights.html">Insights</a>
   <a href="contact.html">Contact</a>
-  <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call</a>
+  <a class="btn" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Book a 15-min call <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
 </nav>
+<!-- /@header -->
 
 <main id="main">
 
-  <section class="band band--tight">
+  <section class="sec dark glow gridbg phero" aria-labelledby="contact-h">
     <div class="wrap">
-      <p class="label lift" style="--d:60ms">Contact</p>
-      <h1 class="lift" style="--d:140ms;max-width:14ch">Tell us where you're stuck.</h1>
-      <p class="lede lift" style="--d:240ms;margin-top:24px">
-        Whether you're just starting or ready to scale, the useful version of this
-        conversation is the specific one. A half-built site, a list you stopped emailing,
-        an offer you're unsure about — that's exactly what we want to hear about.
+      <p class="eyebrow lift" style="--d:40ms"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Contact</p>
+      <h1 id="contact-h" class="lift" style="--d:120ms">Tell us<br><span class="grad">where you're stuck.</span></h1>
+      <p class="lede lift" style="--d:240ms">
+        Whether you're just starting or ready to scale, the useful version of this conversation
+        is the specific one. A half-built site, a list you stopped emailing, an offer you're
+        unsure about: that's exactly what we want to hear about.
       </p>
     </div>
   </section>
 
-  <section class="band band--tight">
+  <section class="sec light" aria-label="Send a message or book a call">
     <div class="wrap">
       <div class="split split--7-5 split--top">
 
-        <div class="rise">
-          <div class="card" style="padding:34px">
-            <h2 style="font-size:clamp(1.5rem,2.4vw,1.9rem);margin-bottom:8px">Send a message</h2>
-            <p class="tiny" style="margin-bottom:26px">We read every one and reply within 24–48 hours.</p>
+        <div class="card rise" style="padding:38px">
+          <h2 style="font-size:clamp(1.6rem,1.3rem + 1vw,2.1rem);margin-bottom:8px">Send a message</h2>
+          <p class="tiny" style="margin-bottom:28px">We read every one and reply within 24 to 48 hours.</p>
 
-            <form class="form" data-lead-form novalidate>
-              <div class="field--2">
-                <div class="field">
-                  <label for="name">Your name</label>
-                  <input id="name" name="name" type="text" autocomplete="name" required placeholder="Maria N.">
-                </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@yourcoaching.com">
-                </div>
-              </div>
-
+          <form class="form" data-lead-form novalidate>
+            <div class="field--2">
               <div class="field">
-                <label for="goal">What are you after?</label>
-                <select id="goal" name="goal">
-                  <option value="">Pick the closest one</option>
-                  <option>More qualified calls booked</option>
-                  <option>A website or funnel that converts</option>
-                  <option>Authority: content, PR, podcast</option>
-                  <option>JV and partner introductions</option>
-                  <option>Automations and clean ops</option>
-                  <option>I'm not sure yet — help me work it out</option>
-                </select>
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required placeholder="Maria N.">
               </div>
-
               <div class="field">
-                <label for="message">Where are you right now?</label>
-                <textarea id="message" name="message" required placeholder="What you coach, who you help, and the bit that isn't working."></textarea>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@yourcoaching.com">
               </div>
+            </div>
 
-              <p class="formnote" data-note hidden tabindex="-1"></p>
+            <div class="field">
+              <label for="goal">What are you after?</label>
+              <select id="goal" name="goal">
+                <option value="">Pick the closest one</option>
+                <option>More qualified calls booked</option>
+                <option>A website or funnel that converts</option>
+                <option>Authority: content, PR, podcast</option>
+                <option>JV and partner introductions</option>
+                <option>Automations and clean ops</option>
+                <option>I'm not sure yet, help me work it out</option>
+              </select>
+            </div>
 
-              <button class="btn btn--wide" type="submit">Send message</button>
-              <p class="tiny" style="text-align:center">
-                Or write to <a class="tlink" href="mailto:roguecoachteams@gmail.com">roguecoachteams@gmail.com</a>
-              </p>
-            </form>
-          </div>
+            <div class="field">
+              <label for="message">Where are you right now?</label>
+              <textarea id="message" name="message" required placeholder="What you coach, who you help, and the bit that isn't working."></textarea>
+            </div>
+
+            <p class="formnote" data-note hidden tabindex="-1"></p>
+
+            <button class="btn btn--wide" type="submit">Send message <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></button>
+            <p class="tiny" style="text-align:center;margin:0">
+              Or write to <a class="tlink" href="mailto:roguecoachteams@gmail.com">roguecoachteams@gmail.com</a>
+            </p>
+          </form>
         </div>
 
         <div class="rise" style="--d:100ms">
-          <div class="card" style="border-color:var(--gold-line)">
-            <p class="label label--plain">Faster route</p>
-            <h3 style="font-size:1.5rem;margin-bottom:12px">Book 15 minutes</h3>
-            <p>No hard pitch. We scope your niche, offer and pricing, and name the fastest
-              honest path to 10–15 calls a month — including when that path has nothing to do
-              with hiring us.</p>
-            <p style="margin-top:22px">
-              <a class="btn btn--wide" href="https://calendly.com/roguecoachteams/rebel-strategy-call">
-                Open the calendar <span class="arw" aria-hidden="true">↗</span>
-              </a>
-            </p>
+          <div class="card path dark">
+            <div class="path__top"><p class="kicker" style="margin:0">Faster route</p><span class="badge">15 minutes</span></div>
+            <h3>Book a call</h3>
+            <p>No hard pitch. We scope your niche, offer and pricing, and name the fastest honest
+              path to 10 to 15 calls a month, including when that path has nothing to do with
+              hiring us.</p>
+            <a class="btn btn--wide" style="margin-top:28px" href="https://calendly.com/roguecoachteams/rebel-strategy-call">Open the calendar <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
           </div>
 
-          <div style="margin-top:24px">
-            <p class="label label--mute">What happens next</p>
+          <div style="margin-top:36px">
+            <p class="kicker" style="margin-bottom:18px">What happens next</p>
             <ul class="ticks">
               <li>We read your message the same business day</li>
-              <li>You get a reply in 24–48 hours with next steps or questions</li>
+              <li>You get a reply in 24 to 48 hours with next steps or questions</li>
               <li>If it's a fit, we send a one-page scope with a fixed price</li>
               <li>Nothing starts, and nothing is charged, until you say go</li>
             </ul>
             <p class="tiny" style="margin-top:20px">
-              Haven't heard back? Check your spam folder, then email us again — we'd rather
-              get it twice than miss it.
+              Haven't heard back? Check your spam folder, then email us again. We'd rather get it
+              twice than miss it.
             </p>
           </div>
 
-          <div style="margin-top:24px">
-            <p class="label label--mute">Ready to buy instead</p>
+          <div style="margin-top:32px;padding-top:28px;border-top:1px solid var(--line)">
+            <p class="kicker" style="margin-bottom:18px">Ready to buy instead</p>
             <ul class="ticks">
-              <li><a class="tlink" href="sprint.html">90-day sprint packages</a> — $900 to $3,600</li>
-              <li><a class="tlink" href="pricing.html">Individual services</a> — $99 to $699</li>
+              <li><a class="tlink" href="sprint.html">90-day sprint packages</a>, $900 to $3,600</li>
+              <li><a class="tlink" href="pricing.html">Individual services</a>, $99 to $699</li>
             </ul>
           </div>
         </div>
@@ -151,18 +155,25 @@
     </div>
   </section>
 
-  <section class="band band--alt band--edge">
+  <section class="sec dark glow" aria-labelledby="feel-h">
     <div class="wrap">
-      <div class="grid rise">
-        <div class="card">
+      <div class="head rise">
+        <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#spark"/></svg>Working with us</p>
+        <h2 id="feel-h">Clear, fast,<br><span class="grad">and built to last.</span></h2>
+      </div>
+      <div class="grid">
+        <div class="card card--hover rise">
+          <span class="ico" style="margin-bottom:24px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#clock"/></svg></span>
           <h3>Fast, predictable setup</h3>
-          <p>We prioritize clarity and speed. No bloated deliverables — just the work that moves the number.</p>
+          <p>We prioritize clarity and speed. No bloated deliverables, just the work that moves the number.</p>
         </div>
-        <div class="card">
+        <div class="card card--hover rise" style="--d:80ms">
+          <span class="ico" style="margin-bottom:24px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#flow"/></svg></span>
           <h3>You coach, we run the system</h3>
           <p>Funnels, authority and clean automation, so your attention goes to clients and calls.</p>
         </div>
-        <div class="card">
+        <div class="card card--hover rise" style="--d:160ms">
+          <span class="ico" style="margin-bottom:24px"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#shield"/></svg></span>
           <h3>Patterns, not experiments</h3>
           <p>The approach leans on what already worked across 100+ coaching brands.</p>
         </div>
@@ -172,12 +183,14 @@
 
 </main>
 
+<!-- @footer -->
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr__grid">
       <div>
-        <a class="brand" href="index.html" style="margin-bottom:16px"><img src="assets/img/logo.png" alt="" width="34" height="34">Rogue Coach Teams</a>
-        <p style="max-width:38ch">The lean growth team for coaches. Authority, partnerships and simple systems — built with you, and handed over to you.</p>
+        <a class="brand" href="index.html" aria-label="Rogue Coach Teams, home"><img src="assets/img/v2/mark.png" alt="" width="40" height="20"><span>Rogue Coach Teams</span></a>
+        <p class="ftr__tag">Authority first.<br><span>Built to book calls.</span></p>
+        <p class="ftr__small">The lean growth team for coaches. Built with you, and handed over to you.</p>
       </div>
       <div>
         <h4>Work with us</h4>
@@ -197,14 +210,22 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+      <div class="ftr__contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:roguecoachteams@gmail.com"><span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail"/></svg></span>roguecoachteams@gmail.com</a></li>
+          <li><a href="https://calendly.com/roguecoachteams/rebel-strategy-call"><span class="ico"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#calendar"/></svg></span>Book a 15-min call</a></li>
+        </ul>
+      </div>
     </div>
     <div class="ftr__base">
-      <span>© 2026 Rogue Coach Teams. Built with intention, not with fluff.</span>
-      <a href="mailto:roguecoachteams@gmail.com">roguecoachteams@gmail.com</a>
+      <span>&copy; 2026 Rogue Coach Teams. Built with intention, not with fluff.</span>
+      <span>Lean growth team for coaches</span>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/site.js"></script>
+<!-- /@footer -->
 </body>
 </html>

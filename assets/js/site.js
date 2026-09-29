@@ -1,5 +1,5 @@
 /* =====================================================================
-   Rogue Coach Teams — site.js
+   Rogue Coach Teams, site.js
    No framework, no build step. Everything degrades to a working page
    with JS off: content is in the HTML, links are real hrefs, and the
    contact form falls back to email.
@@ -12,7 +12,7 @@
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------------------------------------------------- header + drawer */
-  var hdr = document.querySelector(".hdr");
+  var hdr = document.querySelector(".topbar");
   if (hdr) {
     var onScroll = function () {
       hdr.classList.toggle("is-stuck", window.scrollY > 8);
@@ -50,7 +50,7 @@
   /* ------------------------------------------- scroll reveal (once only) */
   /* Threshold stays at 0 with a bottom-margin trigger line: a threshold of
      0.2 never fires for elements taller than the viewport. */
-  var revealables = document.querySelectorAll(".rise, .step, [data-count], .signal--scroll");
+  var revealables = document.querySelectorAll(".rise, [data-count], .signal--scroll");
 
   function activate(el) {
     el.classList.add("is-in");
@@ -99,8 +99,12 @@
     if (isNaN(target)) return;
     var prefix = el.getAttribute("data-prefix") || "";
     var suffix = el.getAttribute("data-suffix") || "";
+    /* The suffix sits in an <em> so it can take the accent colour. */
+    function paint(v) {
+      el.innerHTML = prefix + v + (suffix ? "<em>" + suffix + "</em>" : "");
+    }
     if (reduced) {
-      el.textContent = prefix + target + suffix;
+      paint(target);
       return;
     }
     var dur = 1100;
@@ -110,7 +114,7 @@
       var k = Math.min(1, (t - t0) / dur);
       var eased = 1 - Math.pow(1 - k, 3);
       var v = Math.round(target * eased);
-      el.textContent = prefix + v + suffix;
+      paint(v);
       if (k < 1) requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
@@ -118,7 +122,7 @@
 
   /* ------------------------------------------------- hero load sequence */
   /* Fires unconditionally on the next frame. The animation uses fill:forwards,
-     so it still lands correctly if the tab was in the background while it ran —
+     so it still lands correctly if the tab was in the background while it ran,
      and the hero is never left invisible waiting for an event. */
   requestAnimationFrame(function () {
     document.body.classList.add("is-ready");
@@ -126,20 +130,20 @@
 
   /* ------------------------------------------------------ video playback */
   document.querySelectorAll("[data-video]").forEach(function (card) {
-    var btn = card.querySelector(".vidcard__play");
+    var btn = card.querySelector(".vid__play");
     var vid = card.querySelector("video");
     if (!btn || !vid) return;
     btn.addEventListener("click", function () {
       vid.setAttribute("controls", "");
-      vid.play();
+      card.classList.add("is-playing");
       btn.remove();
-      var meta = card.querySelector(".vidcard__meta");
-      if (meta) meta.remove();
+      vid.play();
+      vid.focus();
     });
   });
 
   /* ------------------------------------------- service catalogue filters */
-  var chips = document.querySelectorAll(".chip[data-filter]");
+  var chips = document.querySelectorAll(".fchip[data-filter]");
   var cards = document.querySelectorAll(".svc[data-cat]");
   var countOut = document.querySelector("[data-shown]");
 
@@ -198,7 +202,7 @@
         "\n" + data.message + "\n";
       return (
         "mailto:" + LEAD_EMAIL +
-        "?subject=" + encodeURIComponent("Website enquiry — " + data.name) +
+        "?subject=" + encodeURIComponent("Website enquiry from " + data.name) +
         "&body=" + encodeURIComponent(body)
       );
     };
@@ -242,7 +246,7 @@
         .then(function () {
           form.reset();
           say(
-            "Thanks — your message is in. We reply within 24–48 hours. " +
+            "Thanks, your message is in. We reply within 24 to 48 hours. " +
               'Want it faster? <a class="tlink" href="' + CAL_LINK +
               '">Book a 15-min call</a>.',
             "ok"
