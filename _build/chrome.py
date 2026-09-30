@@ -10,8 +10,8 @@ Edit the nav or footer here, then run  python _build/apply_chrome.py
 """
 
 CAL = "https://calendly.com/roguecoachteams/rebel-strategy-call"
-EMAIL = "edan@roguecoachteams.com"   # professional address (was the Gmail)
-WA_NUMBER = ""   # digits only with country code, e.g. 254700000000. Widget stays hidden until set.
+EMAIL = "roguecoachteams@gmail.com"   # Harsh chose this one on 30 Sep 2026
+WA_NUMBER = "13202911634"   # +1 (320) 291-1634, WhatsApp business; digits only with country code
 SITE = "https://roguecoachteams.com/"
 
 FONTS = ("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800"

@@ -179,7 +179,7 @@
      handler the current "RCT payments log" script does not have. Paste it,
      redeploy, put the /exec URL below, and the form goes silent-send. */
   var LEAD_ENDPOINT = "";
-  var LEAD_EMAIL = "edan@roguecoachteams.com";
+  var LEAD_EMAIL = "roguecoachteams@gmail.com";
 
   var form = document.querySelector("[data-lead-form]");
   if (form) {

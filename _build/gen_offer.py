@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import chrome
 from chrome import CAL, icon
 
-GUARANTEE_PCT = "100%"        # CONFIRM with Harsh: the recording says "refund ... percent of everything"
+GUARANTEE_PCT = "100%"        # confirmed by Harsh 30 Sep 2026: 100% money-back guarantee
 LEADS = "200"
 YT_VALUE = "$900+"
 
@@ -104,6 +104,11 @@ ITEMS = [
 
 items_html = "".join(item(i + 1, ico, t, w, g, y, (i % 2) * 80) for i, (ico, t, w, g, y) in enumerate(ITEMS))
 
+PAY = {"Starter": "https://www.paypal.com/ncp/payment/4Q5NZZP7S2XRS",
+       "Growth": "https://www.paypal.com/ncp/payment/4J6W58KC66ZNL",
+       "All-in-one": "https://www.paypal.com/ncp/payment/FFKADUKFFGGMJ"}
+
+
 def tier(name, sub, price, feat, points, btn_ghost):
     cls = " tier--feat" if feat else ""
     badge = '<span class="badge">Most chosen</span>' if feat else ""
@@ -117,7 +122,8 @@ def tier(name, sub, price, feat, points, btn_ghost):
           <ul class="ticks">
 {li(points)}
           </ul>
-          <a class="{b}" href="{CAL}">Book a call to start {icon('arrow')}</a>
+          <a class="{b}" href="{PAY[name]}" rel="noopener">Buy {name}, {price} {icon('arrow')}</a>
+          <p class="tier__note">Secure checkout on PayPal. <a class="tlink" href="{CAL}">Prefer to talk first? Book a call.</a></p>
         </article>"""
 
 TIERS = (
@@ -149,7 +155,7 @@ FAQ = [
  ("What does the lead promise mean?",
   f"We commit to delivering {LEADS} leads for your business within the 90 days, sized to your niche and offer, through our podcast and joint venture partners. On the call we will confirm what counts as a lead for you, so the promise is clear on both sides."),
  ("What is the guarantee?",
-  f"If we do not deliver what this page promises within the 90 days, you get a {GUARANTEE_PCT} refund. We are asking for your commitment, so we put ours in writing."),
+  f"If we do not deliver what this page promises within the 90 days, you get a {GUARANTEE_PCT} money-back refund. We are asking for your commitment, so we put ours in writing."),
  ("Do I need a website already?", "No. A website is included. If you already have one, we improve it instead of rebuilding it."),
  ("How much of my time does it need?", "A kickoff workshop of 45 to 60 minutes, a short weekly check-in, and recording your videos. We handle the rest."),
  ("Do I own everything?", "Yes. Every file, login and asset is yours at handover."),
@@ -180,7 +186,7 @@ BODY = f"""
           <ul class="ticks">
             <li><strong>From $897</strong>, one payment, 90 days</li>
             <li><strong>{LEADS} leads</strong> delivered in 90 days</li>
-            <li><strong>{GUARANTEE_PCT} refund guarantee</strong> if we do not deliver</li>
+            <li><strong>{GUARANTEE_PCT} money-back guarantee</strong> if we do not deliver</li>
             <li><strong>Video editing included</strong>, our specialty</li>
             <li><strong>You own everything</strong> at handover</li>
           </ul>
