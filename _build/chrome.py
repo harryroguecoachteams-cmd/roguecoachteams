@@ -10,7 +10,8 @@ Edit the nav or footer here, then run  python _build/apply_chrome.py
 """
 
 CAL = "https://calendly.com/roguecoachteams/rebel-strategy-call"
-EMAIL = "roguecoachteams@gmail.com"
+EMAIL = "website@roguecoachteams.com"   # professional address (was the Gmail)
+WA_NUMBER = ""   # digits only with country code, e.g. 254700000000. Widget stays hidden until set.
 SITE = "https://roguecoachteams.com/"
 
 FONTS = ("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800"
@@ -22,7 +23,7 @@ def icon(name, cls="i"):
 
 
 NAV_LINKS = [
-    ("services.html", "Services"),
+    ("services.html", "Offers"),
     ("pricing.html", "Pricing"),
     ("about.html", "About"),
     ("insights.html", "Insights"),
@@ -30,12 +31,12 @@ NAV_LINKS = [
 ]
 
 
-def head(title, desc, canon, image="assets/img/v2/fan-center.webp"):
+def head(title, desc, canon, image="assets/img/v2/fan-center.webp", noindex=False):
     canon_url = SITE + ("" if canon == "index.html" else canon)
     return f"""<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
-<meta name="description" content="{desc}">
+<meta name="description" content="{desc}">{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
 <link rel="canonical" href="{canon_url}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
@@ -85,6 +86,12 @@ HEADER = f"""<a class="skip" href="#main">Skip to content</a>
   <a class="btn" href="{CAL}">Book a 15-min call {icon('arrow')}</a>
 </nav>"""
 
+WA_FOOT = (f'\n          <li><a href="https://wa.me/{WA_NUMBER}"><span class="ico">{icon("message")}</span>Chat on WhatsApp</a></li>'
+           if WA_NUMBER else "")
+WA_WIDGET = (f'\n<a class="wa" href="https://wa.me/{WA_NUMBER}?text=Hi%20Rogue%20Coach%20Teams" target="_blank" rel="noopener" '
+             f'aria-label="Chat with us on WhatsApp"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#message"/></svg>'
+             f'<span>Chat on WhatsApp</span></a>' if WA_NUMBER else "")
+
 FOOTER = f"""<footer class="ftr">
   <div class="wrap">
     <div class="ftr__grid">
@@ -96,7 +103,7 @@ FOOTER = f"""<footer class="ftr">
       <div>
         <h4>Work with us</h4>
         <ul>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="services.html">Offers</a></li>
           <li><a href="sprint.html">90-day sprint</a></li>
           <li><a href="pricing.html">Individual services</a></li>
           <li><a href="{CAL}">Book a call</a></li>
@@ -115,7 +122,7 @@ FOOTER = f"""<footer class="ftr">
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:{EMAIL}"><span class="ico">{icon('mail')}</span>{EMAIL}</a></li>
-          <li><a href="{CAL}"><span class="ico">{icon('calendar')}</span>Book a 15-min call</a></li>
+          <li><a href="{CAL}"><span class="ico">{icon('calendar')}</span>Book a 15-min call</a></li>{WA_FOOT}
         </ul>
       </div>
     </div>
@@ -126,16 +133,17 @@ FOOTER = f"""<footer class="ftr">
   </div>
 </footer>
 
+{WA_WIDGET}
 <script src="assets/js/site.js"></script>"""
 
 
-def page(title, desc, canon, body, image="assets/img/v2/fan-center.webp"):
+def page(title, desc, canon, body, image="assets/img/v2/fan-center.webp", noindex=False):
     """A full page for the generators."""
     return f"""<!doctype html>
 <html lang="en">
 <head>
 <!-- @head -->
-{head(title, desc, canon, image)}
+{head(title, desc, canon, image, noindex)}
 <!-- /@head -->
 </head>
 <body>

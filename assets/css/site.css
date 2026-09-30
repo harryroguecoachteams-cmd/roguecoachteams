@@ -1024,3 +1024,34 @@ html.js body.is-ready .fan .frame { animation: deal 1.2s var(--ease) var(--d, 40
   .cta-row .btn { width: 100%; }
   .ccard .btn { align-self: stretch; }
 }
+
+
+/* ---- client-site frames that scroll (hero fan + work cards) ---- */
+.frame .scroll { display: block; overflow: hidden; aspect-ratio: 16 / 10; }
+.frame .scroll img { width: 100%; height: auto; aspect-ratio: auto; object-fit: initial; animation: pagescroll 22s ease-in-out infinite alternate; will-change: transform; }
+.fan .frame--l .scroll img { animation-duration: 26s; animation-delay: -6s; }
+.fan .frame--r .scroll img { animation-duration: 30s; animation-delay: -12s; }
+@keyframes pagescroll { 0%, 8% { transform: translateY(0); } 92%, 100% { transform: translateY(calc(-100% + 100cqh)); } }
+.frame .scroll { container-type: size; }
+.wcard__link { display: block; color: inherit; text-decoration: none; }
+.wcard .frame img { aspect-ratio: 1280 / 2600; height: auto; object-fit: initial; object-position: initial; transition: none; }
+.wcard .frame { aspect-ratio: 4 / 5; overflow: hidden; }
+.wcard .frame img { animation: pagescroll2 24s ease-in-out infinite alternate; }
+@keyframes pagescroll2 { 0%, 8% { transform: translateY(0); } 92%, 100% { transform: translateY(calc(-100% + 100cqh)); } }
+.wcard .frame { container-type: size; }
+.wcard .frame__bar { position: relative; z-index: 1; }
+.crew-solo { max-width: 780px; }
+@media (prefers-reduced-motion: reduce) { .frame .scroll img, .wcard .frame img { animation: none; } }
+
+/* ---- WhatsApp widget ---- */
+.wa { position: fixed; right: 20px; bottom: 20px; z-index: 60; display: inline-flex; align-items: center; gap: 10px; padding: 13px 18px; border-radius: 999px; background: #25D366; color: #06210f; font: 700 14px/1 var(--f-body, Inter, sans-serif); text-decoration: none; box-shadow: 0 8px 24px rgba(0,0,0,.28); }
+.wa:hover { transform: translateY(-2px); }
+.wa .i { width: 20px; height: 20px; }
+@media (max-width: 640px) { .wa span { display: none; } .wa { padding: 15px; } }
+
+/* ---- offer landing page: line-item cards ---- */
+.items .item { position: relative; }
+.item__n { position: absolute; top: 22px; right: 26px; font: 600 12.5px/1 var(--f-mono); letter-spacing: 0.12em; color: var(--mute); }
+.item h3 { margin: 20px 0 10px; }
+.item__why { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(127,127,127,.22); font-size: 0.95rem; }
+.frame__bar span { font: 500 10.5px/1 var(--f-mono, monospace); color: #6b7280; display: flex; align-items: center; padding: 0 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }

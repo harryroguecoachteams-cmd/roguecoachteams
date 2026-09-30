@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import chrome  # noqa: E402
 
 SITE = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-PAGES = ["index.html", "about.html", "services.html", "sprint.html", "contact.html"]
+PAGES = ["index.html", "about.html", "services.html", "sprint.html", "contact.html", "offer.html"]
 
 
 def block(name, text, new):
@@ -36,7 +36,8 @@ for name in PAGES:
     img = re.search(r'<meta property="og:image" content="https://roguecoachteams.com/(.*?)">', src)
     img = img.group(1) if img else "assets/img/v2/fan-center.webp"
     out = block("head", src, chrome.head(html.escape(title, quote=False),
-                                         html.escape(desc, quote=True), name, img))
+                                         html.escape(desc, quote=True), name, img,
+                                         noindex='content="noindex' in src))
     out = block("header", out, chrome.HEADER)
     out = block("footer", out, chrome.FOOTER)
     if out != src:

@@ -362,7 +362,7 @@ body_html = f"""
       <p class="lede">Book fifteen minutes and we'll apply all of this to your specific situation instead.</p>
       <div class="cta-row" style="justify-content:center;margin-top:34px">
         <a class="btn" href="{CAL}">Book a 15-min call {ARROW}</a>
-        <a class="btn btn--ghost" href="services.html">See the services</a>
+        <a class="btn btn--ghost" href="services.html">See the offers</a>
       </div>
     </div>
   </section>

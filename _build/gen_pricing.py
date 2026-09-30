@@ -19,7 +19,7 @@ CATS = [
 
 SERVICES = [
     dict(cat="leads", kind="Leads", name="Lead generation", price=99, pay="S2QFSV3EMCFNW",
-         blurb="Validated JV partners plus targeted outreach that fills your calendar with "
+         blurb="Validated joint venture partners, podcast hosts and targeted outreach that fills your calendar with "
                "warm, referral-style leads.",
          deliv=["Partner list and intros", "Outreach scripts", "Booking support"],
          turn="First intros in 7 to 10 days"),
@@ -68,7 +68,7 @@ SERVICES = [
          turn="14 days"),
     dict(cat="authority", kind="Authority", name="Authority &amp; PR", price=299,
          pay="SUYLTUARJ9GPG",
-         blurb="Media features, interviews and bylines that raise your status and make JV "
+         blurb="Media features, interviews and bylines that raise your status and make partner "
                "partners easier to win.",
          deliv=["Angle and pitch kit", "Outlet and host shortlist",
                 "Outreach and scheduling"],
@@ -88,7 +88,7 @@ SERVICES = [
          turn="10 business days"),
     dict(cat="authority", kind="Flagship", name="Book publishing", price=699,
          pay="XFSKVB5G8SVDU",
-         blurb="Turn your IP into a published book that opens doors to PR, JV partnerships "
+         blurb="Turn your IP into a published book that opens doors to PR, joint venture partnerships "
                "and premium clients.",
          deliv=["Outline and manuscript support", "Cover and interior design",
                 "Publishing and distribution"],
@@ -225,7 +225,7 @@ body = f"""
 out = page(
     "Individual services and prices | Rogue Coach Teams",
     "Twelve fixed-price builds for coaches, from $99: branding, website, funnel page, SEO, "
-    "podcast launch, automations, JV lead generation and book publishing. Buy one thing, no retainer.",
+    "podcast launch, automations, partner lead generation and book publishing. Buy one thing, no retainer.",
     "pricing.html",
     body,
 )
