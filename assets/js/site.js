@@ -179,7 +179,7 @@
      handler the current "RCT payments log" script does not have. Paste it,
      redeploy, put the /exec URL below, and the form goes silent-send. */
   var LEAD_ENDPOINT = "";
-  var LEAD_EMAIL = "roguecoachteams@gmail.com";
+  var LEAD_EMAIL = "edan@roguecoachteams.com";
 
   var form = document.querySelector("[data-lead-form]");
   if (form) {
@@ -270,10 +270,10 @@
 
 
   /* -------------------------------------------------- current nav marker */
-  var here = location.pathname.split("/").pop() || "index.html";
+  function norm(p) { return p.replace(/index\.html$/, "").replace(/\/+$/, "") || "/"; }
+  var here = norm(location.pathname);
   document.querySelectorAll(".nav a, .drawer a").forEach(function (a) {
-    var href = a.getAttribute("href") || "";
-    if (href === here || (here === "index.html" && href === "./")) {
+    if (a.origin === location.origin && !a.hash && norm(a.pathname) === here) {
       a.setAttribute("aria-current", "page");
     }
   });

@@ -10,7 +10,7 @@ Edit the nav or footer here, then run  python _build/apply_chrome.py
 """
 
 CAL = "https://calendly.com/roguecoachteams/rebel-strategy-call"
-EMAIL = "website@roguecoachteams.com"   # professional address (was the Gmail)
+EMAIL = "edan@roguecoachteams.com"   # professional address (was the Gmail)
 WA_NUMBER = ""   # digits only with country code, e.g. 254700000000. Widget stays hidden until set.
 SITE = "https://roguecoachteams.com/"
 
